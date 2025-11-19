@@ -51,7 +51,7 @@ if st.button("Predict Price"):
     #yocean_proximity = st.selectbox("Ocean Proximity", ["INLAND", "NEAR BAY", "NEAR OCEAN", "ISLAND"])
 
     try:
-        response = requests.post("http://127.0.0.1:8000/predict", json=data)
+        response = requests.post("https://ml-deployment-for-california-housing-kdkc.onrender.com/predict", json=data)
         result = response.json()
         price = result["predicted_median_house_value"]
         st.success(f"### Predicted Price: ${price:,.2f}")
